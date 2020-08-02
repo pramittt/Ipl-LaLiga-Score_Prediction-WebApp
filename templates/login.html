@@ -1,0 +1,55 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        {% block title %}<title>Login</title>{% endblock %}
+        <link rel="stylesheet" href="{%static 'css/bootstrap.min.css' %}">
+        <style>
+            body{
+                background: url("{%static 'images/account/login_bg.jpg' %}") no-repeat top;
+                background-size:1500px 700px;
+            }
+        </style>
+    </head>
+
+<body>
+    <header class="breadcrumb">
+        <h2>Login Page</h2>
+    </header>
+
+    <div class="row-content d-flex justify-content-center">
+    <form action="login" method="POST" class="center-align">
+        {% csrf_token %}
+        <div class="form-row d-flex justify-content-center">
+          <div class="form-group">
+            <input type="text" name="username" class="form-control" placeholder="Enter username">
+          </div>
+        </div>
+        <div class="form-row d-flex justify-content-center">
+          <div class="form-group center-align">
+            <input type="password" name="Password" class="form-control" placeholder="Password">
+          </div>
+        </div>
+    
+        <div class="form-group center-align">
+            <button type="submit" class="btn btn-success">SignIn</button>
+            <a href="register" class="unstyled"><button type="button" class="btn btn-info">Register</button></a>
+        </div>
+        <div class="form-group center-align">
+        <a href="back" class="unstyled"><button type="button" class="btn btn-secondary">Back</button></a>
+        </div>
+        {% if messages %}
+        <div class="badge badge-fill badge-warning form-group d-flex justify-content-center">
+            {% for message in messages %}
+            <h5>{{message}}</h5>
+            {% endfor %}
+        </div>
+        {% endif %}
+        </div>
+        </div>
+    </form>
+    </div>
+
+</body>
+</html>

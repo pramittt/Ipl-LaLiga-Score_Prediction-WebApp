@@ -1,0 +1,97 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        {% block title %}<title>{{name}}</title>{% endblock %}
+        <style>
+            body{
+                background: url("{%static 'images/ipl/ipl_bg.jpg' %}") no-repeat center fixed;
+                background-size:1377px 720px;
+            }
+        </style>
+        <link rel="stylesheet" href="{%static 'css/bootstrap.min.css' %}"> 
+        <link rel="stylesheet" href="{%static 'css/style.css' %}">
+    </head>
+
+<body>
+    <header class="breadcrumb">
+        <h3>IPL Prediction</h3>
+    </header>
+
+    <div class="row-content col-12 d-flex justify-content-center">
+        <div>
+        {% if total %}
+        <img src="/static/images/ipl/{{bat_team}}.jpg" height="300px" width="300px">
+        
+        <span class="badge badge-fill badge-info"><h1>{{total}}</h1></span>
+        
+        <img src="/static/images/ipl/{{bowl_team}}.jpg" height="300px" width="300px">
+        <div class="d-flex justify-content-center">
+        <input type=button class="btn btn-secondary" value="Back To Predict" onClick="javascript:history.go(-1);">
+        </div>
+        <div class="d-flex justify-content-center mt-3">
+            <button type="submit" class="btn"><a href="home">Home</a></button>
+        </div>
+        </div>
+        {% else %}
+        <form action="predict" method="POST" class="center-align">
+        {% csrf_token %}
+        <div class="form-row d-flex justify-content-center ">
+        <div class="col-5 form-group">
+          <select id="inputState" class="form-control" name="BatTeam">
+            <option selected>Batting Team</option>
+            <option>Chennai Super Kings</option> <option>Delhi Capitals</option> <option>Kings XI Punjab</option> 
+            <option>Kolkata knight Riders</option> 
+            <option>Mumbai Indians</option> <option>Rajasthan Royals</option>
+            <option>Royal Challengers Bangalore</option> <option>Sunrisers Hyderabad</option>
+          </select>
+        </div>
+          <span class="badge badge-fill"><h4>V</h4></span>
+        <div class="col-5 form-group d-flex justify-content-center">
+          <select id="inputState" class="form-control" name="BowlTeam">
+            <option selected>Bowling Team</option>
+            <option>Chennai Super Kings</option> <option>Delhi Capitals</option> <option>Kings XI Punjab</option> 
+            <option>Kolkata knight Riders</option> 
+            <option>Mumbai Indians</option> <option>Rajasthan Royals</option>
+            <option>Royal Challengers Bangalore</option> <option>Sunrisers Hyderabad</option>
+          </select>
+        </div>
+        </div>
+
+        <div class="form-row d-flex justify-content-center">
+            <div class="col-4 form-group center-align">
+                <input type="text" name="Overs" placeholder="Overs">
+            </div>
+        </div>
+        <div class="form-row d-flex justify-content-center">
+            <div class="col-4 form-group center-align">
+                <input type="number" name="Runs" placeholder="Runs">
+            </div>
+        </div>
+        <div class="form-row d-flex justify-content-center">
+            <div class="col-4 form-group center-align">
+                <input type="text" name="Wickets" placeholder="Wickets">
+            </div>
+        </div>
+        <div class="form-row d-flex justify-content-center">
+            <div class="col-4 form-group center-align">
+                <input type="text" name="Runs_4over" placeholder="Runs in last 4 overs">
+            </div>
+        </div>
+        <div class="d-flex justify-content-center">
+            <button type="submit" class="btn btn-secondary">Predict Total</button>
+        </div>
+        <div class="d-flex justify-content-center mt-3">
+            <button type="submit" class="btn"><a href="home">Home</a></button>
+        </div>
+    </form>
+    {% endif %}
+
+        
+    
+
+    </div>
+</body>
+ 
+</html>

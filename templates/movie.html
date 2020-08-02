@@ -1,0 +1,33 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        {% block title %}<title>{{name}}</title>{% endblock %}
+        <style>
+            body{
+                background: url({{cover}}) no-repeat center fixed; 
+                background-size:560px 720px;
+            }
+        </style>
+        <link rel="stylesheet" href="{%static 'css/bootstrap.min.css' %}">
+    </head>
+
+<body class="col-10">
+    {% for name in search %}
+    <div class="card info" style="width: 22rem;">
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item large"><a href="https://en.wikipedia.org/wiki/{{name}}" class="unstyled">{{name}}</a>
+            {% if name.currentRole %}
+            <span class="small"> ({{name.currentRole}})</span>
+            {% endif %}
+        </li>
+        </ul>
+    </div>
+    {% endfor %}
+
+    
+
+    <a href="back">Back</a>
+</body>
+</html>
