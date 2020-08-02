@@ -24,11 +24,6 @@ SECRET_KEY = 'cpupl8wny2z=$4ld!uppx0_-43ez97v)1amdo20=%wwe2izy_h'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
-DATABASES = {
-    'default': dj_database_url.config(
-        default=config('DATABASE_URL')
-    )
-}
 
 ALLOWED_HOSTS = []
 
