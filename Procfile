@@ -1,0 +1,1 @@
+web: gunicorn pramit.wsgi --log-file -
