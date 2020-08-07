@@ -92,7 +92,7 @@
   <div class="col-6 d-flex justify-content-center">
     <div class="card-group">
       <div class="card">
-        <img class="card-img-top" src="/static/images/home/movie.jpg" alt="Card image cap" height="300px" width="150px">
+        <img class="card-img-top" src="" alt="Card image cap" height="300px" width="150px">
         <div class="card-body">
           <h5 class="card-title">Movie</h5>
           <form action="accounts/movie_info" method="POST">
@@ -109,10 +109,12 @@
     </div>
   </div>
 
+  {% for team in teams %}
+
   <div class="col-6 d-flex justify-content-center">
     <div class="card-group">
       <div class="card">
-        <img class="card-img-top" src="/static/images/home/laliga.jpg" alt="Card image cap" height="300px" width="150px">
+        <img class="card-img-top" src="{{team.img.url}}" alt="Card image cap" height="300px" width="150px">
         <div class="card-body">
           <h5 class="card-title">La Liga</h5>
             {% if user.is_authenticated %}
@@ -126,12 +128,14 @@
   </div>
 </div>
 
+{% endfor %}
+
 <div class="mt-4 container">
   <div class="row d-flex justify-content-center">
     <div class="col-6 d-flex justify-content-center">
       <div class="card-group">
         <div class="card">
-          <img class="card-img-top" src="/static/images/home/ipl.jpg" alt="Card image cap" height="300px" width="150px">
+          <img class="card-img-top" src="" alt="Card image cap" height="300px" width="150px">
           <div class="card-body">
             <h5 class="card-title">IPL</h5>
               {% if user.is_authenticated %}
