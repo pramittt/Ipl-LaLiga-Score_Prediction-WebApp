@@ -8,7 +8,7 @@ idna==2.10
 IMDbPY==6.8
 joblib==0.16.0
 lxml==4.5.1
-whitenoise==3.2
+whitenoise==4.0
 numpy==1.18.5
 pandas==1.0.4
 patsy==0.5.1
