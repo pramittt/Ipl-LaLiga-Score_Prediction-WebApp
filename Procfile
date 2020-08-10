@@ -1,1 +1,1 @@
-web: gunicorn pramit.wsgi
+web: gunicorn pramit.wsgi --access-logfile -
