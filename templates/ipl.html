@@ -6,7 +6,7 @@
         {% block title %}<title>{{name}}</title>{% endblock %}
         <style>
             body{
-                background: url("{%static 'images/ipl/ipl_bg.jpg' %}") no-repeat center fixed;
+                background: url("https://firebasestorage.googleapis.com/v0/b/predict-meter.appspot.com/o/images%2Fipl%2Finn1_icon.jpg?alt=media&token=964713a4-97df-4d93-bb51-f729ca656ac1") no-repeat center fixed;
                 background-size:1377px 720px;
             }
         </style>
@@ -22,11 +22,11 @@
     <div class="row-content col-12 d-flex justify-content-center">
         <div>
         {% if total %}
-        <img src="https://firebasestorage.googleapis.com/v0/b/predict-meter.appspot.com/o/images%2Fipl%2F{{bat_team}}.jpg?alt=media&token=41fea1a5-652a-4b1e-9c5d-820770e226be" height="300px" width="300px">
+        <img src="https://firebasestorage.googleapis.com/v0/b/predict-meter.appspot.com/o/images%2Fipl%2F{{bat_team}}.jpg?alt=media&token={{bat_token}}" height="300px" width="300px">
         
         <span class="badge badge-fill badge-info"><h1>{{total}}</h1></span>
         
-        <img src="https://firebasestorage.googleapis.com/v0/b/predict-meter.appspot.com/o/images%2Fipl%2F{{bowl_team}}.jpg?alt=media&token=41fea1a5-652a-4b1e-9c5d-820770e226be" height="300px" width="300px">
+        <img src="https://firebasestorage.googleapis.com/v0/b/predict-meter.appspot.com/o/images%2Fipl%2F{{bowl_team}}.jpg?alt=media&token={{bowl_token}}" height="300px" width="300px">
         <div class="d-flex justify-content-center">
         <input type=button class="btn btn-secondary" value="Back To Predict" onClick="javascript:history.go(-1);">
         </div>

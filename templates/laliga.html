@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <style>
             body{
-                background: url("{%static 'images/fc/bg.jpg' %}") no-repeat center fixed;
+                background: url("https://firebasestorage.googleapis.com/v0/b/predict-meter.appspot.com/o/images%2Ffc%2Fbg.jpg?alt=media&token=7ce8a869-f2ba-4ca6-9e05-238fb40cf2ef") no-repeat center fixed;
                 background-size:1920px 1080px;
             }
         </style>
@@ -22,13 +22,13 @@
     <div class="row-content d-flex justify-content-center">
         {% if home_goal %}
         <div>
-        <img src="https://firebasestorage.googleapis.com/v0/b/predict-meter.appspot.com/o/images%2Ffc%2F{{home}}.jpg?alt=media&token=703d8acf-c342-44f4-96aa-80ffb2174533" height="300px" width="250px">
+        <img src="https://firebasestorage.googleapis.com/v0/b/predict-meter.appspot.com/o/images%2Ffc%2F{{home}}.jpg?alt=media&token={{home_token}}" height="300px" width="250px">
         
         <span class="badge badge-fill badge-info"><h1>{{home_goal}}</h1></span>
         <span class="badge badge-fill badge-danger"><h4>V</h4></span>
         <span class="badge badge-fill badge-info"><h1>{{away_goal}}</h1></span>
         
-        <img src="https://firebasestorage.googleapis.com/v0/b/predict-meter.appspot.com/o/images%2Ffc%2F{{away}}.jpg?alt=media&token=703d8acf-c342-44f4-96aa-80ffb2174533" height="300px" width="250px">
+        <img src="https://firebasestorage.googleapis.com/v0/b/predict-meter.appspot.com/o/images%2Ffc%2F{{away}}.jpg?alt=media&token={{away_token}}" height="300px" width="250px">
         <div class="d-flex justify-content-center">
             <input type=button class="btn btn-secondary" value="Back To Predict" onClick="javascript:history.go(-1);">
         </div>
