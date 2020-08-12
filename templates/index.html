@@ -3,9 +3,9 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>GeekyIndia &mdash; Get Trending Info</title>
+    <title>Predict-Meter &mdash; Get Info</title>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta content='width=device-width, initial-scale=1' name='viewport'/>
 
     <link rel="stylesheet" href="https://firebasestorage.googleapis.com/v0/b/predict-meter.appspot.com/o/css%2Fbootstrap.min.css?alt=media&token=6892f846-8b33-403a-acdf-cec41d300d47">
     <link rel="stylesheet" href="https://firebasestorage.googleapis.com/v0/b/predict-meter.appspot.com/o/css%2Fstyle.css?alt=media&token=86b1b53c-11a3-40d0-9186-c51013a19995">
@@ -30,7 +30,7 @@
         <div class="row align-items-center">
           
           <div class="col- col-xl-4">
-            <h1 class="col-12"><a href=accounts/back class="text-black h2 mb-0">Find-O-Meter</a></h1>
+            <h1 class="col-12"><a href=accounts/back class="text-black h2 mb-0">Predict-Meter</a></h1>
           </div>
           <div class="col-8 col-md-6 d-none d-xl-block">
             <nav class="site-navigation position-relative text-right text-lg-center" role="navigation">
@@ -79,9 +79,8 @@
       
     </header>
 
-<div class="mt-4 container">
-<div class="row justify-content-center">
-  <div class="col-6 d-flex justify-content-center">
+  <div class="container">
+  <div class="mt-4 d-flex justify-content-center">
     <div class="card-group">
       <div class="card">
         <img class="card-img-top" src="https://firebasestorage.googleapis.com/v0/b/predict-meter.appspot.com/o/images%2Fhome%2Fmovie.jpg?alt=media&token=99a221d4-27c1-4fc9-840a-96dd9bc99ddc" alt="Card image cap" height="300px" width="150px">
@@ -90,53 +89,37 @@
           <form action="accounts/movie_info" method="POST">
             {% csrf_token %}
             <input type="text" name="movie_name" placeholder="Series name">
-            {% if user.is_authenticated %}
             <input type="submit"></li>
-            {% else %}
-            <input type='submit' value='Submit' onclick='this.form.action="accounts/no_operation";' />
-            {% endif %}
           </form>
         </div>
       </div>
     </div>
   </div>
 
-  <div class="col-6 d-flex justify-content-center">
+  <div class="mt-4 d-flex justify-content-center">
     <div class="card-group">
       <div class="card">
         <img class="card-img-top" src="https://firebasestorage.googleapis.com/v0/b/predict-meter.appspot.com/o/images%2Fhome%2Flaliga.jpg?alt=media&token=774c83ee-4b91-49ae-8361-0f28a9648828" alt="Card image cap" height="300px" width="150px">
         <div class="card-body">
           <h5 class="card-title">La Liga</h5>
-            {% if user.is_authenticated %}
             <a href="laliga"><button type="submit" class="btn btn-primary">Predict LaLiga Score</button></a>
-            {% else %}
-            <a href="accounts/no_operation"><button type="submit">Predict LaLiga Score</button></a>
-            {% endif %}
         </div>
       </div>
     </div>
   </div>
 </div>
 
-<div class="mt-4 container">
-  <div class="row d-flex justify-content-center">
-    <div class="col-6 d-flex justify-content-center">
+  <div class="mt-4 d-flex justify-content-center">
       <div class="card-group">
         <div class="card">
           <img class="card-img-top" src="https://firebasestorage.googleapis.com/v0/b/predict-meter.appspot.com/o/images%2Fhome%2Fipl.jpg?alt=media&token=6498bb5a-0973-465b-bac9-4b8016020d87" alt="Card image cap" height="300px" width="150px">
           <div class="card-body">
             <h5 class="card-title">IPL</h5>
-              {% if user.is_authenticated %}
               <a href="ipl"><button type="submit" class="btn btn-primary">Predict IPL Score</button></a>
-              {% else %}
-              <a href="accounts/no_operation"><button type="submit">Predict IPL Score</button></a>
-              {% endif %}
           </div>
         </div>
       </div>
-    </div>
   </div>
-</div>
 </div>
 
     
