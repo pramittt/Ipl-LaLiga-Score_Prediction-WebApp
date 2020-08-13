@@ -35,6 +35,11 @@ def predict(request):
                 '0dac7291-70c5-455f-8876-bdba573db77a','ef7ad438-0a7f-4c02-929a-4bdb0e8025dc',
                 'b25ec2c9-1953-48d3-8534-d9a98760ce59','d64a7c00-fba3-4496-b42f-6b525a13c15d',
                 'c5b9588f-7577-4d4f-863f-1e4e04a69f32','baac8391-aee4-4c1c-a6a1-a8601f1dba7e']
+
+        if(home_team==away_team or home_team=='Home Team Name' or away_team=='Away Team Name' or half_home=='' or half_away==''):
+            messages.info(request,'Something went wrong')
+            return render(request,'laliga.html')
+        
         token_home=token[team.index(home_team)]
         token_away=token[team.index(away_team)]
 

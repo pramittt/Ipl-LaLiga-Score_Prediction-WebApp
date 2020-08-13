@@ -9,7 +9,9 @@
 
     <link rel="stylesheet" href="https://firebasestorage.googleapis.com/v0/b/predict-meter.appspot.com/o/css%2Fbootstrap.min.css?alt=media&token=6892f846-8b33-403a-acdf-cec41d300d47">
     <link rel="stylesheet" href="https://firebasestorage.googleapis.com/v0/b/predict-meter.appspot.com/o/css%2Fstyle.css?alt=media&token=86b1b53c-11a3-40d0-9186-c51013a19995">
-    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-social/5.1.1/bootstrap-social.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
   </head>
   <body>
   
@@ -30,49 +32,9 @@
         <div class="row align-items-center">
           
           <div class="col- col-xl-4">
-            <h1 class="col-12"><a href=accounts/back class="text-black h2 mb-0">Predict-Meter</a></h1>
+            <h1 class="col-12"><a href="#" class="text-black h2 mb-0">Predict-Meter</a></h1>
           </div>
-          <div class="col-8 col-md-6 d-none d-xl-block">
-            <nav class="site-navigation position-relative text-right text-lg-center" role="navigation">
-
-              <ul class="site-menu js-clone-nav mx-auto d-none d-lg-block">
-                <li class="active">
-                  <a href="{%static 'index.html' %}">Home</a>
-                </li>
-
-                {% if user.is_authenticated %}
-                <li><a>Hello {{user.first_name}}</a></li>
-                <li><a href="accounts/logout">Logout</a></li>
-                {% else %}
-                <li><a href="accounts/register">Register</a></li>
-                <li><a href="accounts/login">Login</a></li>
-                {% endif %}
-                
-                <!-- <li><a href="booking.html">Book Online</a></li> -->
-              </ul>
-            </nav>
-          </div>
-
-
-          <div class="col-4 col-xl-2 text-right">
-            <div class="d-none d-xl-inline-block">
-              <ul class="site-menu js-clone-nav ml-auto list-unstyled d-flex text-right mb-0" data-class="social">
-                <li>
-                  <a href="#" class="pl-3 pr-3 text-black"><span class="icon-twitter"></span></a>
-                </li>
-                <li>
-                  <a href="#" class="pl-3 pr-3 text-black"><span class="icon-facebook"></span></a>
-                </li>
-                <li>
-                  <a href="#" class="pl-3 pr-3 text-black"><span class="icon-instagram"></span></a>
-                </li>
-                
-              </ul>
-            </div>
-
-            <div class="d-inline-block d-xl-none ml-md-0 mr-auto py-3" style="position: relative; top: 3px;"><a href="#" class="site-menu-toggle js-menu-toggle text-black"><span class="icon-menu h3"></span></a></div>
-
-          </div>
+          
 
         </div>
       </div>
@@ -80,7 +42,8 @@
     </header>
 
 <div class="container">
-  <div class="mt-4 d-flex justify-content-center">
+  <div class="row">
+  <div class="mt-4 col-md-6 col-xs-8 d-flex justify-content-center">
     <div class="card-group">
       <div class="card">
         <img class="card-img-top" src="https://firebasestorage.googleapis.com/v0/b/predict-meter.appspot.com/o/images%2Fhome%2Fmovie.jpg?alt=media&token=99a221d4-27c1-4fc9-840a-96dd9bc99ddc" alt="Card image cap" height="300px" width="150px">
@@ -96,7 +59,7 @@
     </div>
   </div>
 
-  <div class="mt-4 d-flex justify-content-center">
+  <div class="mt-4 col-md-6 col-xs-8 d-flex justify-content-center">
     <div class="card-group">
       <div class="card">
         <img class="card-img-top" src="https://firebasestorage.googleapis.com/v0/b/predict-meter.appspot.com/o/images%2Fhome%2Flaliga.jpg?alt=media&token=774c83ee-4b91-49ae-8361-0f28a9648828" alt="Card image cap" height="300px" width="150px">
@@ -108,7 +71,7 @@
     </div>
   </div>
 
-  <div class="mt-4 d-flex justify-content-center">
+  <div class="mt-4 col-md-6 col-xs-8 d-flex justify-content-center">
       <div class="card-group">
         <div class="card">
           <img class="card-img-top" src="https://firebasestorage.googleapis.com/v0/b/predict-meter.appspot.com/o/images%2Fhome%2Fipl.jpg?alt=media&token=6498bb5a-0973-465b-bac9-4b8016020d87" alt="Card image cap" height="300px" width="150px">
@@ -119,20 +82,24 @@
         </div>
       </div>
   </div>
-
+  </div>
 </div>
 
     
-    <footer class="mt-4 site-footer">
+    <footer class="mt-4 site-footer blue">
       <div class="container">
-        <div class="row">
-          <div class="col-lg-4">
-              <h3 class="footer-heading mb-4">Write to us at:</h3>
-              <p><a href="mailto:parmitkumarpkr@gmail.com">parmitkumarpkr@gmail.com</a></p>
-          </div>
-          </div>
-        </div>
-          
+        <div class="row d-flex justify-content-center text-white">
+
+          <a href="https://www.facebook.com/pramit.kumar.587/" class="btn btn-social-icon btn-lg btn-fb" type="button" role="button"><i class="fa fa-facebook"></i></a>
+
+          <a href="mailto:parmitkumarpkr@gmail.com" class="btn btn-social-icon btn-lg btn-email" type="button" role="button"><i class="fa fa-envelope"></i></a>
+
+          <a href="https://www.linkedin.com/in/pramit-kumar-955471152/" class="btn btn-social-icon btn-lg btn-li" type="button" role="button"><i class="fa fa-linkedin"></i></a>
+
+          <a href="https://www.instagram.com/pramit.kr/" class="btn btn-social-icon btn-lg btn-ins" type="button" role="button"><i class="fa fa-instagram"></i></a>
+
+          <a href="https://github.com/pramittt" class="btn btn-social-icon btn-lg btn-git" type="button" role="button"><i class="fa fa-github"></i></a>
+
         </div>
       </div>
     </footer>

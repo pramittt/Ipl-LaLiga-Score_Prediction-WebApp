@@ -19,22 +19,27 @@
         <h3>IPL Prediction</h3>
     </header>
 
-    <div class="row-content col-12 d-flex justify-content-center">
-        <div>
-        {% if total %}
-        <img src="https://firebasestorage.googleapis.com/v0/b/predict-meter.appspot.com/o/images%2Fipl%2F{{bat_team}}.jpg?alt=media&token={{bat_token}}" height="300px" width="300px">
-        
-        <span class="badge badge-fill badge-info"><h1>{{total}}</h1></span>
-        
-        <img src="https://firebasestorage.googleapis.com/v0/b/predict-meter.appspot.com/o/images%2Fipl%2F{{bowl_team}}.jpg?alt=media&token={{bowl_token}}" height="300px" width="300px">
-        <div class="d-flex justify-content-center">
-        <input type=button class="btn btn-secondary" value="Back To Predict" onClick="javascript:history.go(-1);">
+    
+        {% if total1 %}
+        <div class="row d-flex justify-content-center">
+            <div class="col-md-3 col-xs-8 d-flex justify-content-center">
+            <img src="https://firebasestorage.googleapis.com/v0/b/predict-meter.appspot.com/o/images%2Fipl%2F{{bat_team}}.jpg?alt=media&token={{bat_token}}" height="300px" width="300px">
+            </div>
+            <div class="col-md-2 col-xs-8 d-flex justify-content-center mt-5 mb-5">
+            <span class="badge badge-fill badge-info"><h1>{{total1}} to {{total2}}</h1></span>
+            </div>
+            <div class="col-3 col-xs-8 d-flex justify-content-center">
+            <img src="https://firebasestorage.googleapis.com/v0/b/predict-meter.appspot.com/o/images%2Fipl%2F{{bowl_team}}.jpg?alt=media&token={{bowl_token}}" height="300px" width="300px">
+            </div>
         </div>
-        <div class="d-flex justify-content-center mt-3">
+        <div class="row d-flex justify-content-center mt-3">
+            <input type=button class="btn btn-secondary" value="Back To Predict" onClick="javascript:history.go(-1);">
+        </div>
+        <div class="row d-flex justify-content-center mt-3">
             <button type="submit" class="btn"><a href="home">Home</a></button>
         </div>
-        </div>
         {% else %}
+        <div class="row-content col-12 d-flex justify-content-center">
         <form action="predict" method="POST" class="center-align">
         {% csrf_token %}
         <div class="form-row d-flex justify-content-center ">
@@ -61,7 +66,7 @@
 
         <div class="form-row d-flex justify-content-center">
             <div class="col-4 form-group center-align">
-                <input type="text" name="Overs" placeholder="Overs">
+                <input type="number" name="Overs" placeholder="Overs (5 - 15)">
             </div>
         </div>
         <div class="form-row d-flex justify-content-center">
@@ -71,12 +76,12 @@
         </div>
         <div class="form-row d-flex justify-content-center">
             <div class="col-4 form-group center-align">
-                <input type="text" name="Wickets" placeholder="Wickets">
+                <input type="number" name="Wickets" placeholder="Wickets">
             </div>
         </div>
         <div class="form-row d-flex justify-content-center">
             <div class="col-4 form-group center-align">
-                <input type="text" name="Runs_4over" placeholder="Runs in last 4 overs">
+                <input type="number" name="Runs_4over" placeholder="Runs in last 4 overs">
             </div>
         </div>
         <div class="d-flex justify-content-center">
@@ -85,6 +90,11 @@
         <div class="d-flex justify-content-center mt-3">
             <button type="submit" class="btn"><a href="home">Home</a></button>
         </div>
+        {% for message in messages %}
+        <div class="d-flex justify-content-center mt-2">
+            <span class="badge badge-fill badge-danger"><h5>{{message}}</h5></span>
+        </div>
+        {% endfor %}
     </form>
     {% endif %}
 

@@ -30,6 +30,12 @@ def predict(request):
                 '670c159a-0c22-448a-b064-90adab97e5cb','34c111f9-3794-42eb-b446-112a96e1e660',
                 '50aee1e6-6032-4195-91c2-8d6d72b7b598','41fea1a5-652a-4b1e-9c5d-820770e226be',
                 'e414232d-2447-46b5-b1b0-3be72986ed7b','b0ecb2e3-7f61-4a84-baec-1df742d2e702']
+
+        if(bowl_team==bat_team or bat_team=='Batting Team' or bowl_team=='Bowling Team' or overs=='' or runs=='' or 
+            wickets=='' or last4=='' or int(last4)>int(runs) or int(wickets)>9 or int(overs)<5 or int(overs)>15):
+            messages.info(request,'Something went wrong')
+            return render(request,'ipl.html')
+
         token_bat=token[teams.index(bat_team)]
         token_bowl=token[teams.index(bowl_team)]
         
@@ -45,7 +51,7 @@ def predict(request):
         pred1 = int(lasso1.predict(data)[0])
         if(pred1<int(runs)):
             pred1=int(runs)+3
-        return render(request,'ipl.html', {'bat_team':bat_team,'bowl_team':bowl_team,'total':str(pred1),'bat_token':token_bat,
+        return render(request,'ipl.html', {'bat_team':bat_team,'bowl_team':bowl_team,'total1':pred1-10,'total2':pred1+15,'bat_token':token_bat,
                                 'bowl_token':token_bowl})
 
 
